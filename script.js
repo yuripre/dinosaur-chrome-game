@@ -50,14 +50,10 @@ window.addEventListener("keydown", (e) => {
 
 let result = setInterval(() => {
   let dinoBottom = parseInt(getComputedStyle(dino).getPropertyValue("bottom"));
-  //    console.log("dinoBottom" + dinoBottom);
 
   let blockLeft = parseInt(getComputedStyle(block).getPropertyValue("left"));
-  //    console.log("BlockLeft" + blockLeft);
 
   if (dinoBottom <= 90 && blockLeft >= 20 && blockLeft <= 145) {
-    //        console.log("Game Over");
-
     gameOver.style.display = "block";
     block.classList.remove("blockActive");
     road.firstElementChild.style.animation = "none";
@@ -72,7 +68,7 @@ let result = setInterval(() => {
 const calculateHighScore = (playerScore) => {
   if (highScore === 0) {
     highScore = playerScore;
-  } else if (playerScore > highScore){
+  } else if (playerScore > highScore) {
     highScore = playerScore;
   }
   return highScore;
